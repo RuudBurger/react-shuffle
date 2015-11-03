@@ -209,7 +209,9 @@ const Shuffle = React.createClass({
   },
 
   _finishAnimation() {
-    this.setState({animating: false});
+    if(this.isMounted()){
+      this.setState({animating: false});
+    }
   },
 
   _getPositions() {
